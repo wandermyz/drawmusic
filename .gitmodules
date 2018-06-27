@@ -1,0 +1,6 @@
+[submodule "3rdparty/vcvbridge"]
+	path = 3rdparty/vcvbridge
+	url = git@github.com:VCVRack/Bridge.git
+[submodule "3rdparty/vcvrack"]
+	path = 3rdparty/vcvrack
+	url = git@github.com:VCVRack/Rack.git

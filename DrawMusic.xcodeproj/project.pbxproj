@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8ABAF71320DECFF600309332 /* SoundInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAF71120DECFF600309332 /* SoundInterface.cpp */; };
+		8ABAF72E20E07E0F00309332 /* VCVRackSoundInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8ABAF72C20E07E0F00309332 /* VCVRackSoundInterface.cpp */; };
 		8AF2262D20DECEF4005B12A3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2262C20DECEF4005B12A3 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A64E14420E4188F002AB674 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
+		8A64E14520E4188F002AB674 /* widgets.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = widgets.hpp; sourceTree = "<group>"; };
+		8A64E14620E4188F002AB674 /* keyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = keyboard.hpp; sourceTree = "<group>"; };
+		8A64E14720E4188F002AB674 /* settings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = settings.hpp; sourceTree = "<group>"; };
+		8A64E14920E4188F002AB674 /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
+		8A64E14A20E4188F002AB674 /* request.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = request.hpp; sourceTree = "<group>"; };
+		8A64E14B20E4188F002AB674 /* color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = color.hpp; sourceTree = "<group>"; };
+		8A64E14C20E4188F002AB674 /* common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
+		8A64E14D20E4188F002AB674 /* app.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app.hpp; sourceTree = "<group>"; };
+		8A64E14E20E4188F002AB674 /* componentlibrary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = componentlibrary.hpp; sourceTree = "<group>"; };
+		8A64E14F20E4188F002AB674 /* plugin.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = plugin.hpp; sourceTree = "<group>"; };
+		8A64E15020E4188F002AB674 /* bridge.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bridge.hpp; sourceTree = "<group>"; };
+		8A64E15120E4188F002AB674 /* events.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = events.hpp; sourceTree = "<group>"; };
+		8A64E15220E4188F002AB674 /* window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
+		8A64E15320E4188F002AB674 /* rack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rack.hpp; sourceTree = "<group>"; };
+		8A64E15420E4188F002AB674 /* gamepad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gamepad.hpp; sourceTree = "<group>"; };
+		8A64E15520E4188F002AB674 /* audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = audio.hpp; sourceTree = "<group>"; };
+		8A64E15620E4188F002AB674 /* tags.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tags.hpp; sourceTree = "<group>"; };
+		8A64E15720E4188F002AB674 /* rtmidi.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = rtmidi.hpp; sourceTree = "<group>"; };
+		8A64E15820E4188F002AB674 /* ui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ui.hpp; sourceTree = "<group>"; };
+		8A64E15920E4188F002AB674 /* bridgeprotocol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bridgeprotocol.hpp; sourceTree = "<group>"; };
+		8A64E15B20E4188F002AB674 /* ringbuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ringbuffer.hpp; sourceTree = "<group>"; };
+		8A64E15C20E4188F002AB674 /* functions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
+		8A64E15D20E4188F002AB674 /* minblep.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = minblep.hpp; sourceTree = "<group>"; };
+		8A64E15E20E4188F002AB674 /* samplerate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = samplerate.hpp; sourceTree = "<group>"; };
+		8A64E15F20E4188F002AB674 /* digital.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = digital.hpp; sourceTree = "<group>"; };
+		8A64E16020E4188F002AB674 /* fir.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fir.hpp; sourceTree = "<group>"; };
+		8A64E16120E4188F002AB674 /* fft.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fft.hpp; sourceTree = "<group>"; };
+		8A64E16220E4188F002AB674 /* decimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = decimator.hpp; sourceTree = "<group>"; };
+		8A64E16320E4188F002AB674 /* filter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = filter.hpp; sourceTree = "<group>"; };
+		8A64E16420E4188F002AB674 /* vumeter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vumeter.hpp; sourceTree = "<group>"; };
+		8A64E16520E4188F002AB674 /* frame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = frame.hpp; sourceTree = "<group>"; };
+		8A64E16620E4188F002AB674 /* ode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ode.hpp; sourceTree = "<group>"; };
+		8A64E16720E4188F002AB674 /* asset.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = asset.hpp; sourceTree = "<group>"; };
+		8A64E16820E4188F002AB674 /* midi.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = midi.hpp; sourceTree = "<group>"; };
+		8ABAF71120DECFF600309332 /* SoundInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundInterface.cpp; sourceTree = "<group>"; };
+		8ABAF71220DECFF600309332 /* SoundInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SoundInterface.hpp; sourceTree = "<group>"; };
+		8ABAF72420DED0F500309332 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
+		8ABAF72C20E07E0F00309332 /* VCVRackSoundInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VCVRackSoundInterface.cpp; sourceTree = "<group>"; };
+		8ABAF72D20E07E0F00309332 /* VCVRackSoundInterface.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VCVRackSoundInterface.hpp; sourceTree = "<group>"; };
 		8AF2262920DECEF4005B12A3 /* DrawMusic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DrawMusic; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF2262C20DECEF4005B12A3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,9 +80,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A64E14320E4188F002AB674 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				8A64E14420E4188F002AB674 /* engine.hpp */,
+				8A64E14520E4188F002AB674 /* widgets.hpp */,
+				8A64E14620E4188F002AB674 /* keyboard.hpp */,
+				8A64E14720E4188F002AB674 /* settings.hpp */,
+				8A64E14820E4188F002AB674 /* util */,
+				8A64E14D20E4188F002AB674 /* app.hpp */,
+				8A64E14E20E4188F002AB674 /* componentlibrary.hpp */,
+				8A64E14F20E4188F002AB674 /* plugin.hpp */,
+				8A64E15020E4188F002AB674 /* bridge.hpp */,
+				8A64E15120E4188F002AB674 /* events.hpp */,
+				8A64E15220E4188F002AB674 /* window.hpp */,
+				8A64E15320E4188F002AB674 /* rack.hpp */,
+				8A64E15420E4188F002AB674 /* gamepad.hpp */,
+				8A64E15520E4188F002AB674 /* audio.hpp */,
+				8A64E15620E4188F002AB674 /* tags.hpp */,
+				8A64E15720E4188F002AB674 /* rtmidi.hpp */,
+				8A64E15820E4188F002AB674 /* ui.hpp */,
+				8A64E15920E4188F002AB674 /* bridgeprotocol.hpp */,
+				8A64E15A20E4188F002AB674 /* dsp */,
+				8A64E16720E4188F002AB674 /* asset.hpp */,
+				8A64E16820E4188F002AB674 /* midi.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		8A64E14820E4188F002AB674 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8A64E14920E4188F002AB674 /* math.hpp */,
+				8A64E14A20E4188F002AB674 /* request.hpp */,
+				8A64E14B20E4188F002AB674 /* color.hpp */,
+				8A64E14C20E4188F002AB674 /* common.hpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		8A64E15A20E4188F002AB674 /* dsp */ = {
+			isa = PBXGroup;
+			children = (
+				8A64E15B20E4188F002AB674 /* ringbuffer.hpp */,
+				8A64E15C20E4188F002AB674 /* functions.hpp */,
+				8A64E15D20E4188F002AB674 /* minblep.hpp */,
+				8A64E15E20E4188F002AB674 /* samplerate.hpp */,
+				8A64E15F20E4188F002AB674 /* digital.hpp */,
+				8A64E16020E4188F002AB674 /* fir.hpp */,
+				8A64E16120E4188F002AB674 /* fft.hpp */,
+				8A64E16220E4188F002AB674 /* decimator.hpp */,
+				8A64E16320E4188F002AB674 /* filter.hpp */,
+				8A64E16420E4188F002AB674 /* vumeter.hpp */,
+				8A64E16520E4188F002AB674 /* frame.hpp */,
+				8A64E16620E4188F002AB674 /* ode.hpp */,
+			);
+			path = dsp;
+			sourceTree = "<group>";
+		};
+		8A64E16A20E418A7002AB674 /* vcvrack */ = {
+			isa = PBXGroup;
+			children = (
+				8A64E14320E4188F002AB674 /* include */,
+			);
+			path = vcvrack;
+			sourceTree = "<group>";
+		};
+		8ABAF71A20DED0F500309332 /* 3rdparty */ = {
+			isa = PBXGroup;
+			children = (
+				8A64E16A20E418A7002AB674 /* vcvrack */,
+				8ABAF71B20DED0F500309332 /* vcvbridge */,
+			);
+			path = 3rdparty;
+			sourceTree = "<group>";
+		};
+		8ABAF71B20DED0F500309332 /* vcvbridge */ = {
+			isa = PBXGroup;
+			children = (
+				8ABAF72320DED0F500309332 /* common */,
+			);
+			path = vcvbridge;
+			sourceTree = "<group>";
+		};
+		8ABAF72320DED0F500309332 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				8ABAF72420DED0F500309332 /* client.cpp */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		8AF2262020DECEF4005B12A3 = {
 			isa = PBXGroup;
 			children = (
+				8ABAF71A20DED0F500309332 /* 3rdparty */,
 				8AF2262B20DECEF4005B12A3 /* DrawMusic */,
 				8AF2262A20DECEF4005B12A3 /* Products */,
 			);
@@ -58,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				8AF2262C20DECEF4005B12A3 /* main.cpp */,
+				8ABAF71120DECFF600309332 /* SoundInterface.cpp */,
+				8ABAF71220DECFF600309332 /* SoundInterface.hpp */,
+				8ABAF72C20E07E0F00309332 /* VCVRackSoundInterface.cpp */,
+				8ABAF72D20E07E0F00309332 /* VCVRackSoundInterface.hpp */,
 			);
 			path = DrawMusic;
 			sourceTree = "<group>";
@@ -118,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABAF72E20E07E0F00309332 /* VCVRackSoundInterface.cpp in Sources */,
 				8AF2262D20DECEF4005B12A3 /* main.cpp in Sources */,
+				8ABAF71320DECFF600309332 /* SoundInterface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/3rdparty/vcvrack/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -228,6 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/3rdparty/vcvrack/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
