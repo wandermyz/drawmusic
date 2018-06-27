@@ -10,6 +10,7 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+#include <opencv2/opencv.hpp>
 
 static VCVRackSoundInterface rack;
 
@@ -36,39 +37,55 @@ void thread_worker()
 }
 
 int main(int argc, const char * argv[]) {
+    cv::VideoCapture cap(0);
+    if (!cap.isOpened())
+    {
+        return -1;
+    }
+    
     rack.SetTone(0, 440);
     rack.SetTone(1, 880);
     rack.SetTone(2, 220);
     
-    std::thread t(thread_worker);
+    std::thread audioThread(thread_worker);
     
-    while (true)
+    cv::Mat edges;
+    cv::namedWindow("video",1);
+    for(;;)
     {
-        char c = getchar();
+        cv::Mat frame;
+        cap >> frame; // get a new frame from camera
+        // cvtColor(frame, edges, COLOR_BGR2GRAY);
+        // GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
+        // Canny(edges, edges, 0, 30, 3);
+        cv::imshow("video", frame);
         
-        if (c == 'w')
+        int c = cv::waitKey(30);
+        if (c == (int)'w')
         {
             rack.SetTone(0, rack.GetTone(0) * 1.1);
         }
-        else if ( c == 's')
+        else if (c == (int)'s')
         {
             rack.SetTone(0, rack.GetTone(0) * 0.9);
         }
     }
     
-    t.join();
+    // while (true)
+    // {
+    //     char c = getchar();
+    //
+    //     if (c == 'w')
+    //     {
+    //         rack.SetTone(0, rack.GetTone(0) * 1.1);
+    //     }
+    //     else if ( c == 's')
+    //     {
+    //         rack.SetTone(0, rack.GetTone(0) * 0.9);
+    //     }
+    // }
     
-    // pthread_attr_t attr;
-    // pthread_attr_init(&attr);
-    // sched_param param;
-    // pthread_attr_getschedparam(&attr, &param);
-    // param.sched_priority = 20;
-    // pthread_attr_setschedparam(&attr, &param);
-    //
-    // pthread_t t;
-    // pthread_create(&t, &attr, thread_worker, nullptr);
-    //
-    // pthread_join(t, nullptr);
+    audioThread.join();
     
     return 0;
 }
