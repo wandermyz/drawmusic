@@ -30,8 +30,9 @@ public:
 private:
     std::mutex toneMutex;
     float tones[NUM_CHANNELS];
-    
     double steps[NUM_CHANNELS];
+    double angleDelta[NUM_CHANNELS];
+    
     float input[BLOCK_SIZE * NUM_CHANNELS];
     float output[BLOCK_SIZE * NUM_CHANNELS];
     std::unique_ptr<struct BridgeClient> bridgeClient;

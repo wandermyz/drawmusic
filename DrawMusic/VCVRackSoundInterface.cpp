@@ -31,6 +31,7 @@ void VCVRackSoundInterface::SetTone( int channel, float frequency )
     
     toneMutex.lock();
     tones[channel] = frequency;
+    angleDelta[channel] = frequency / SAMPLE_RATE * 2.0 * 3.1415926525;
     toneMutex.unlock();
 }
 
@@ -56,10 +57,10 @@ void VCVRackSoundInterface::Update(long long deltaMicro)
             
             if (tones[c] > 0)
             {
-                sample = 0.5 * sin(steps[c] * tones[c] * (2 * 3.1415926525));
+                sample = sin(steps[c]);
             }
             input[i * NUM_CHANNELS + c] = sample;
-            steps[c] += 1.0 / SAMPLE_RATE;
+            steps[c] += angleDelta[c];
         }
     }
     toneMutex.unlock();
