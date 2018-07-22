@@ -16,6 +16,7 @@ class SoundInterface
 public:
     virtual void SetTone( int channel, float frequency ) = 0;
     virtual float GetTone( int channel ) = 0;
+    virtual void SetLevel( int channel, float level ) = 0;
     virtual void Update( long long deltaMicro ) = 0;
 };
 

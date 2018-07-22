@@ -24,12 +24,14 @@ public:
     ~VCVRackSoundInterface();
     
     virtual void SetTone(int channel, float frequency);
+    virtual void SetLevel(int channel, float level);
     virtual float GetTone(int channel);
     virtual void Update(long long deltaMicro);
 
 private:
     std::mutex toneMutex;
     float tones[NUM_CHANNELS];
+    float levels[NUM_CHANNELS];
     double steps[NUM_CHANNELS];
     double angleDelta[NUM_CHANNELS];
     

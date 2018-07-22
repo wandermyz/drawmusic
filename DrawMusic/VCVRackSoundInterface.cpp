@@ -11,10 +11,13 @@
 #include <assert.h>
 #include "../3rdparty/vcvbridge/common/client.cpp"
 
+static const double PI2 = 2.0 * 3.1415926525;
+
 VCVRackSoundInterface::VCVRackSoundInterface() : bridgeClient(std::make_unique<BridgeClient>())
 {
     memset(tones, 0, sizeof(tones));
     memset(steps, 0, sizeof(steps));
+    memset(levels, 0, sizeof(levels));
     
     bridgeClient->setPort(0);
     bridgeClient->setSampleRate(SAMPLE_RATE);
@@ -31,7 +34,15 @@ void VCVRackSoundInterface::SetTone( int channel, float frequency )
     
     toneMutex.lock();
     tones[channel] = frequency;
-    angleDelta[channel] = frequency / SAMPLE_RATE * 2.0 * 3.1415926525;
+    angleDelta[channel] = frequency / SAMPLE_RATE * PI2;
+    toneMutex.unlock();
+}
+
+void VCVRackSoundInterface::SetLevel(int channel, float level)
+{
+    assert(channel < NUM_CHANNELS);
+    toneMutex.lock();
+    levels[channel] = level;
     toneMutex.unlock();
 }
 
@@ -55,9 +66,14 @@ void VCVRackSoundInterface::Update(long long deltaMicro)
         {
             float sample = 0;
             
-            if (tones[c] > 0)
+            if (levels[c] > 0)
             {
-                sample = sin(steps[c]);
+                sample = levels[c];
+            }
+            else if (tones[c] > 0)
+            {
+                // sample = sin(steps[c]);
+                sample = steps[c] / PI2 - floor(steps[c] / PI2);
             }
             input[i * NUM_CHANNELS + c] = sample;
             steps[c] += angleDelta[c];
