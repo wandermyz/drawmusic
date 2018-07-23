@@ -38,7 +38,11 @@ void thread_worker()
 }
 
 int main(int argc, const char * argv[]) {
-    cv::VideoCapture cap(1);
+	
+	// @jacky Change number here if it connects to a wrong webcam
+	cv::VideoCapture cap(0);
+	
+	
     // cap.set(CV_CAP_PROP_FRAME_WIDTH,640);
     // cap.set(CV_CAP_PROP_FRAME_HEIGHT,360);
     
@@ -49,16 +53,16 @@ int main(int argc, const char * argv[]) {
     std::thread audioThread(thread_worker);
     
     cv::namedWindow("video");
-    cv::moveWindow("video", 2560, 0);
+    // cv::moveWindow("video", 2560, 0);
     
     // cv::namedWindow("diff");
     // cv::moveWindow("diff", 2560, 600);
 
     cv::namedWindow("edge");
-    cv::moveWindow("edge", 2560, 600);
+    // cv::moveWindow("edge", 2560, 600);
     
     cv::namedWindow("delta");
-    cv::moveWindow("delta", 2560, 1200);
+    // cv::moveWindow("delta", 2560, 1200);
 
     cv::Mat staticBack;
     cv::Mat prevFrame;
@@ -68,7 +72,8 @@ int main(int argc, const char * argv[]) {
         cv::Mat fullFrame;
         cap >> fullFrame; // get a new frame from camera
         
-        cv::Mat frame = fullFrame(cv::Rect(480, 270, 960, 540));
+        // cv::Mat frame = fullFrame(cv::Rect(480, 270, 960, 540));
+		cv::Mat frame = fullFrame;
         
         cv::Mat gray;
         cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
@@ -137,14 +142,17 @@ int main(int argc, const char * argv[]) {
         prevFrame = gray;
         
         int c = cv::waitKey(30);
-        
+		
+		// Channel 1~3: Motion detection to distort 440Hz, 532Hz and 659Hz, sawtooth tone
         rack.SetTone(0, 440 * (0.5 + 8 * absDiff) );
         rack.SetTone(1, 532.25 * (0.5 + 2 * absDiff) );
         rack.SetTone(2, 659.25 * (0.5 + 12 * absDiff) );
+		
+		// Channel 4~5: Motion detection based, sawtooth tone, smaller change
         rack.SetTone(3, 440 * (1 + 16 * movement));
         rack.SetTone(4, 659.25 * (1 + 8 * movement));
         
-        
+		// Channel 8: Density of image lines
         rack.SetLevel(7, density);
 
         if (c == (int)'w')
